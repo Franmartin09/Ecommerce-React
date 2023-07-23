@@ -3,14 +3,14 @@ services:
   frontend:
     container_name: react
     build:
-      context: ../youtube
+      context: ../app
       dockerfile: Dockerfile
     environment:
       - MONGODB_URL=mongodb://admin:admin@mongo:27017/modaspaco
     ports:
       - '3000:3000'
     volumes:
-      - ../youtube:/app
+      - ../app:/app
     depends_on:
       - mongo
 
